@@ -1,0 +1,41 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 20px;
+    height: 100px;
+    background: #1e1a1d;
+}
+
+header {
+    /* min-width: 200px;
+    max-width: 400px; */
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+header a {
+    font-weight: 100;
+    font-size: larger;
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+header a:focus,
+header a:active {
+    color: #f819c7;
+}
+header a:hover {
+    text-decoration: underline;
+}
+h1.stripe {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #f819c7;
+}
+section#body-of-app {
+    margin: 0 0.4em;
+}

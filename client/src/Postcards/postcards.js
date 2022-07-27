@@ -1,10 +1,9 @@
 import "./style.css";
 
 import { useEffect, useState } from "react";
-import getClientContentful from "../client";
-import { getEntriesByContentType } from "../client";
+import { getEntriesByContentType } from "../Contentful/client";
 
-export default function Images() {
+export default function Postcards() {
     const [postcards, setPostcards] = useState();
 
     useEffect(() => {
@@ -20,6 +19,7 @@ export default function Images() {
 
     return (
         <>
+            <h1>Hi Postcard</h1>
             {postcards &&
                 postcards.map((postcard) => {
                     return (

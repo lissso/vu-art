@@ -3,35 +3,35 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { getEntriesByContentType } from "../Contentful/client";
 
-export default function Photos() {
-    const [photos, setPhotos] = useState();
+export default function Artists() {
+    const [artits, setArtists] = useState();
 
     useEffect(() => {
-        getEntriesByContentType("photo")
+        getEntriesByContentType("artist")
             .then((response) => {
-                setPhotos(response.items);
+                setArtists(response.items);
                 console.log(response);
             })
             .catch(console.error);
     }, []);
 
-    console.log("photos:\t", photos);
+    console.log("artits:\t", artits);
 
     return (
         <>
-            <h1>Hello photo</h1>
-            {photos &&
-                photos.map((photo) => {
+            <h1>Hello artist</h1>
+            {artits &&
+                artits.map((artist) => {
                     return (
-                        <div key={photo.sys.id}>
-                            {photo.fields.title}
+                        <div key={artist.sys.id}>
+                            {artist.fields.name}
                             <br />
-                            {photo.fields.image && (
+                            {/* {artist.fields.image && (
                                 <img
                                     className="postcards"
-                                    src={`https:${photo.fields.image?.fields.file.url}`}
+                                    src={`https:${artist.fields.image?.fields.file.url}`}
                                 />
-                            )}
+                            )} */}
                         </div>
                     );
                 })}
