@@ -2,9 +2,10 @@ import "./style.css";
 
 import { useEffect, useState } from "react";
 import { getEntriesByContentType } from "../Contentful/client";
+import ArtistEntries from "../ArtistEntries/artistEntries";
 
 export default function Artists() {
-    const [artits, setArtists] = useState();
+    const [artists, setArtists] = useState();
 
     useEffect(() => {
         getEntriesByContentType("artist")
@@ -15,17 +16,17 @@ export default function Artists() {
             .catch(console.error);
     }, []);
 
-    console.log("artits:\t", artits);
+    console.log("artits:\t", artists);
 
     return (
         <>
             <h1>Hello artist</h1>
-            {artits &&
-                artits.map((artist) => {
+            {artists &&
+                artists.map((artist) => {
                     return (
                         <div key={artist.sys.id}>
-                            {artist.fields.name}
                             <br />
+                            <ArtistEntries artist={artist.fields.name} />
                             {/* {artist.fields.image && (
                                 <img
                                     className="postcards"

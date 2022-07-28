@@ -10,7 +10,7 @@ export default function Photos() {
         getEntriesByContentType("photo")
             .then((response) => {
                 setPhotos(response.items);
-                console.log(response);
+                // console.log(response);
             })
             .catch(console.error);
     }, []);
@@ -19,7 +19,7 @@ export default function Photos() {
 
     return (
         <>
-            <h1>Hello photo</h1>
+            <h1>Photography</h1>
             {photos &&
                 photos.map((photo) => {
                     return (

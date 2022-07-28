@@ -2,7 +2,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: unset;
     padding: 10px 20px;
     height: 100px;
     background: #1e1a1d;
@@ -37,5 +37,9 @@ h1.stripe {
     color: #f819c7;
 }
 section#body-of-app {
+    min-height: 100%;
     margin: 0 0.4em;
+}
+a.logo {
+    margin-top: 22px;
 }

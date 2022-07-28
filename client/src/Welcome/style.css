@@ -1,0 +1,34 @@
+#welcome {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1a1d;
+}
+
+a.logo-welcome img {
+    width: 400px;
+}
+
+section {
+    /* min-width: 200px;
+    max-width: 400px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+section a {
+    font-weight: 100;
+    font-size: 80px;
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+section a:focus,
+section a:active {
+    color: #f819c7;
+}
+section a:hover {
+    text-decoration: underline;
+}
