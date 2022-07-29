@@ -69,7 +69,7 @@ export default function ContactForm() {
                         ))}
                     <br />
                 </div>
-                <button type="submit">{status}</button>
+                <button className="submitBtn" type="submit">{status}</button>
             </form>
         </>
     );

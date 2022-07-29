@@ -23,6 +23,7 @@ export default class App extends Component {
                 <Route exact path={"/"}>
                     <Welcome />
                 </Route>
+
                 <Body />
             </BrowserRouter>
         );
