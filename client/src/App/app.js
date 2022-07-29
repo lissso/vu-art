@@ -12,8 +12,7 @@ import Form from "../Components/form";
 import Header from "../Welcome/header";
 import Footer from "../Welcome/footer";
 import Flop from "./flop";
-import Logo from "../Components/logo";
-import FlipLogo from "../Welcome/flipLogo";
+import LogoCube from "./Cube/cube";
 
 // import Images from "./Images/images";
 
@@ -30,6 +29,9 @@ export default function App() {
             <Body />
             {/* </div> */}
             {/* </div> */}
+            <Route path={"/cube"}>
+                <LogoCube />
+            </Route>
         </BrowserRouter>
     );
 }
@@ -38,7 +40,7 @@ function Body() {
     return (
         <>
             <Header />
-            
+
             <div id="content-wrap">
                 <Route path={"/postcards"}>
                     <Postcards />
@@ -61,6 +63,9 @@ function Body() {
 
             <Route path={"/flop"}>
                 <Flop />
+            </Route>
+            <Route path={"/cube"}>
+                <LogoCube />
             </Route>
         </>
     );
