@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
-        <>
-            <footer>
-                <Link className="contact-footer" to="/contact">
-                    contact
-                </Link>
-            </footer>
-        </>
+        <footer id="footer">
+            <div>created with ❤︎ Lisso</div>
+            <Link className="contact-footer" to="/contact">
+                contact
+            </Link>
+        </footer>
     );
 }

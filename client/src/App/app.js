@@ -1,7 +1,8 @@
 import "./style.css";
 
-import { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+// import FlipPage from "react-flip-page";
+// import { useRef } from "react";
 
 import Welcome from "../Welcome/welcome";
 import Postcards from "../Components/postcards";
@@ -10,46 +11,57 @@ import Artists from "../Components/artists";
 import Form from "../Components/form";
 import Header from "../Welcome/header";
 import Footer from "../Welcome/footer";
+import Flop from "./flop";
+import Logo from "../Components/logo";
+import FlipLogo from "../Welcome/flipLogo";
 
 // import Images from "./Images/images";
 
-export default class App extends Component {
-    componentDidMount() {
-        console.log("App mounted!");
-    }
-    render() {
-        return (
-            <BrowserRouter>
-                <Route exact path={"/"}>
-                    <Welcome />
-                </Route>
-
-                <Body />
-            </BrowserRouter>
-        );
-    }
+export default function App() {
+    return (
+        <BrowserRouter>
+            {/* <div className={"cube" + this.state.flopped ? " flop" : ""}> */}
+            {/* <div className="flippety"> */}
+            <Route exact path={"/"}>
+                <Welcome />
+            </Route>
+            {/* </div>
+                <div className="flop"> */}
+            <Body />
+            {/* </div> */}
+            {/* </div> */}
+        </BrowserRouter>
+    );
 }
 
 function Body() {
     return (
         <>
             <Header />
-            <Route path={"/postcards"}>
-                <Postcards />
-            </Route>
+            
+            <div id="content-wrap">
+                <Route path={"/postcards"}>
+                    <Postcards />
+                </Route>
 
-            <Route path={"/photos"}>
-                <Photos />
-            </Route>
+                <Route path={"/photos"}>
+                    <Photos />
+                </Route>
 
-            <Route path={"/artists"}>
-                <Artists />
-            </Route>
+                <Route path={"/artists"}>
+                    <Artists />
+                </Route>
 
-            <Route path={"/contact"}>
-                <Form />
-            </Route>
+                <Route path={"/contact"}>
+                    <Form />
+                </Route>
+            </div>
+
             <Footer />
+
+            <Route path={"/flop"}>
+                <Flop />
+            </Route>
         </>
     );
 }

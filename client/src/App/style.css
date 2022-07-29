@@ -10,4 +10,49 @@ h1.stripe {
 a.logo {
     margin-top: 22px;
 }
+/* //////////////////// CUBE //////////////// */
+.cube {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    height: 100px;
 
+    -webkit-transition: -webkit-transform 0.33s;
+    transition: transform 0.33s; /* Animate the transform properties */
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d; /* <-NB */
+}
+
+/* The two faces of the cube */
+.flippety,
+.flop {
+    background: rgb(247, 247, 247);
+    border: 1px solid rgba(147, 184, 189, 0.8);
+
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 0 5px 20px rgba(105, 108, 109, 0.3),
+        0 0 8px 5px rgba(208, 223, 226, 0.4) inset;
+    box-shadow: 0 5px 20px rgba(105, 108, 109, 0.3),
+        0 0 8px 5px rgba(208, 223, 226, 0.4) inset;
+    height: 100px;
+}
+
+/* Position the faces */
+.flippety {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+}
+
+.flop {
+    -webkit-transform: rotateX(-90deg) translateZ(-50px);
+    transform: rotateX(-90deg) translateZ(-50px);
+}
+
+/* Rotate the cube */
+.cube.flop {
+    -webkit-transform: rotateX(89deg);
+    transform: rotateX(89deg); /* Text bleed at 90º */
+}

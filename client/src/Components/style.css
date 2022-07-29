@@ -24,7 +24,7 @@ img.postcards {
 
 .modal-content {
     width: 600px;
-    height: 500px;
+    height: 600px;
     background: white;
     color: #185adb;
     z-index: 10;
@@ -39,6 +39,8 @@ img.postcards {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     color: #185adb;
+    padding: 0 40px;
+    margin-bottom: 20px;
 }
 
 .modal-body {
