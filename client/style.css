@@ -5,3 +5,86 @@ body {
     font-size: x-large;
     margin: 0;
 }
+
+/* //////////////////// WELCOME //////////////// */
+#welcome {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1a1d;
+}
+
+a.logo-welcome img {
+    width: 400px;
+}
+
+section {
+    /* min-width: 200px;
+    max-width: 400px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+section a {
+    font-weight: 100;
+    font-size: 80px;
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+section a:focus,
+section a:active {
+    color: #f819c7;
+}
+section a:hover {
+    text-decoration: underline;
+}
+
+/* //////////////////// HEADER //////////////// */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: unset;
+    padding: 10px 20px;
+    height: 100px;
+    background: #1e1a1d;
+}
+
+header {
+    /* min-width: 200px;
+    max-width: 400px; */
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+header a {
+    font-weight: 100;
+    font-size: larger;
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+header a:focus,
+header a:active {
+    color: #f819c7;
+}
+header a:hover {
+    text-decoration: underline;
+}
+/* //////////////////// FOOTER //////////////// */
+footer {
+    width: 100vw;
+    height: 100px;
+    background-color: orange;
+    margin: 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+
+    /* margin-top: 100px; */
+}

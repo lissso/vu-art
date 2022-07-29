@@ -42,3 +42,10 @@ export async function getEntriesByArtists() {
     console.log(entries, "entries client artists");
     return entries;
 }
+
+export async function getArtists() {
+    const entries = await getEntriesByArtists();
+    return entries.map((x) => {
+        return { name: x.fields.name, email: x.fields.email };
+    });
+}

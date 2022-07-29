@@ -1,4 +1,4 @@
-import { getEntriesByArtist } from "../Contentful/client";
+import { getEntriesByArtist } from "./client";
 import { useEffect, useState } from "react";
 
 export default function ArtistEntries({ artist }) {

@@ -1,11 +1,20 @@
 // import { Link } from "react-router-dom";
-import { getEntriesByArtists } from "../Contentful/client";
-import { useState } from "react";
+import { getArtists } from "../Contentful/client";
+import { useState, useEffect } from "react";
 
 import "./style.css";
 
 export default function ContactForm() {
     const [status, setStatus] = useState("Submit");
+    const [artists, setArtists] = useState();
+
+    useEffect(() => {
+        getArtists().then((x) => {
+            console.log("getArtists", x);
+            setArtists(x);
+        });
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
@@ -45,13 +54,20 @@ export default function ContactForm() {
                     <textarea id="message" required />
                 </div>
                 <div>
-                    <input
-                        type="checkbox"
-                        id="artist1"
-                        name="artist1"
-                        value="artist1"
-                    />
-                    <label> artist1</label> <br />
+                    {artists &&
+                        artists.map((x, i) => (
+                            <>
+                                <input
+                                    key={i}
+                                    type="checkbox"
+                                    id="artist"
+                                    name={x.name}
+                                    value={x.email}
+                                />
+                                <label key={"label-" + i}> {x.name}</label>{" "}
+                            </>
+                        ))}
+                    <br />
                 </div>
                 <button type="submit">{status}</button>
             </form>

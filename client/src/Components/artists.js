@@ -2,7 +2,7 @@ import "./style.css";
 
 import { useEffect, useState } from "react";
 import { getEntriesByContentType } from "../Contentful/client";
-import ArtistEntries from "../ArtistEntries/artistEntries";
+import ArtistEntries from "../Contentful/artistEntries";
 
 export default function Artists() {
     const [artists, setArtists] = useState();
@@ -20,6 +20,7 @@ export default function Artists() {
 
     return (
         <>
+          
             <h1>Hello artist</h1>
             {artists &&
                 artists.map((artist) => {
@@ -36,6 +37,7 @@ export default function Artists() {
                         </div>
                     );
                 })}
+           
         </>
     );
 }
