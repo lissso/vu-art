@@ -7,8 +7,7 @@ class LogoCube extends React.Component {
         return (
             <div>
                 <center>
-                    <h1>react-3d-cube</h1>
-                    <h2>no children</h2>
+                    {/* <h1>react-3d-cube</h1>
                     <div
                         style={{
                             width: 300,
@@ -16,8 +15,8 @@ class LogoCube extends React.Component {
                         }}
                     >
                         <Cube size={300} index="front" />
-                    </div>
-                    <h2>set children</h2>
+                    </div> */}
+
                     <div
                         style={{
                             width: 300,
@@ -25,12 +24,36 @@ class LogoCube extends React.Component {
                         }}
                     >
                         <Cube size={300} index="front">
-                            <div>front</div>
-                            <div>right</div>
-                            <div>back</div>
-                            <div>left</div>
-                            <div>top</div>
-                            <div>bottom</div>
+                            <div>
+                                <img src="/logo.svg" />
+                            </div>
+                            <div>
+                                <img
+                                    style={{ backgroundColor: "#f819c7" }}
+                                    className="logo-card"
+                                    src="/VU.svg"
+                                />
+                            </div>
+                            <div>
+                                <img
+                                    style={{ backgroundColor: "#f819c7" }}
+                                    className="logo-card"
+                                    src="/ART.svg"
+                                />
+                            </div>
+                            <div>
+                                <img src="/logo.svg" />
+                            </div>
+                            <div>
+                                <img
+                                    style={{ backgroundColor: "#f819c7" }}
+                                    className="logo-card"
+                                    src="/VU.svg"
+                                />
+                            </div>
+                            <div>
+                                <img className="logo-card" src="/ART.svg" />
+                            </div>
                         </Cube>
                     </div>
                 </center>

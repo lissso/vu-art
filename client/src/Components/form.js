@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 import { getArtists } from "../Contentful/client";
 import { useState, useEffect } from "react";
+import LogoCube from "../App/Cube/cube";
 
 import "./style.css";
 
@@ -37,7 +38,8 @@ export default function ContactForm() {
     };
 
     return (
-        <>
+        <section className="form">
+            <LogoCube />
             <h1>Connect with our artists: </h1>
 
             <form onSubmit={handleSubmit}>
@@ -58,6 +60,7 @@ export default function ContactForm() {
                         artists.map((x, i) => (
                             <>
                                 <input
+                                    className="checkbox"
                                     key={i}
                                     type="checkbox"
                                     id="artist"
@@ -69,8 +72,10 @@ export default function ContactForm() {
                         ))}
                     <br />
                 </div>
-                <button className="submitBtn" type="submit">{status}</button>
+                <button className="submitBtn" type="submit">
+                    {status}
+                </button>
             </form>
-        </>
+        </section>
     );
 }

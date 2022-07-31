@@ -64,9 +64,7 @@ function Body() {
             <Route path={"/flop"}>
                 <Flop />
             </Route>
-            <Route path={"/cube"}>
-                <LogoCube />
-            </Route>
+    
         </>
     );
 }

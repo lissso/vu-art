@@ -38,3 +38,23 @@ export default function Postcards() {
         </>
     );
 }
+
+
+//  <>
+//      <h1>Hi Postcard</h1>
+//      {postcards &&
+//          postcards.map((postcard) => {
+//              return (
+//                  <div key={postcard.sys.id}>
+//                      {postcard.fields.title}
+//                      <br />
+//                      {postcard.fields.image && (
+//                          <img
+//                              className="postcards"
+//                              src={`https:${postcard.fields.image?.fields.file.url}`}
+//                          />
+//                      )}
+//                  </div>
+//              );
+//          })}
+//  </>;
