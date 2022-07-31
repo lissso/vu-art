@@ -40,42 +40,44 @@ export default function ContactForm() {
     return (
         <section className="form">
             <LogoCube />
-            <h1>Connect with our artists: </h1>
+            <div className="form-container">
+                <h1>Connect with our artists: </h1>
 
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" required />
-                </div>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" required />
-                </div>
-                <div>
-                    <label htmlFor="message">Message:</label>
-                    <textarea id="message" required />
-                </div>
-                <div>
-                    {artists &&
-                        artists.map((x, i) => (
-                            <>
-                                <input
-                                    className="checkbox"
-                                    key={i}
-                                    type="checkbox"
-                                    id="artist"
-                                    name={x.name}
-                                    value={x.email}
-                                />
-                                <label key={"label-" + i}> {x.name}</label>{" "}
-                            </>
-                        ))}
-                    <br />
-                </div>
-                <button className="submitBtn" type="submit">
-                    {status}
-                </button>
-            </form>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="name">Name:</label>
+                        <input type="text" id="name" required />
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="email" id="email" required />
+                    </div>
+                    <div>
+                        <label htmlFor="message">Message:</label>
+                        <textarea id="message" required />
+                    </div>
+                    <div>
+                        {artists &&
+                            artists.map((x, i) => (
+                                <>
+                                    <input
+                                        className="checkbox"
+                                        key={i}
+                                        type="checkbox"
+                                        id="artist"
+                                        name={x.name}
+                                        value={x.email}
+                                    />
+                                    <label key={"label-" + i}> {x.name}</label>{" "}
+                                </>
+                            ))}
+                        <br />
+                    </div>
+                    <button className="submitBtn" type="submit">
+                        {status}
+                    </button>
+                </form>
+            </div>
         </section>
     );
 }

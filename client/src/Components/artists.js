@@ -21,19 +21,14 @@ export default function Artists() {
     return (
         <>
           
-            <h1>Hello artist</h1>
+            <h1>artist</h1>
             {artists &&
                 artists.map((artist) => {
                     return (
                         <div key={artist.sys.id}>
                             <br />
                             <ArtistEntries artist={artist.fields.name} />
-                            {/* {artist.fields.image && (
-                                <img
-                                    className="postcards"
-                                    src={`https:${artist.fields.image?.fields.file.url}`}
-                                />
-                            )} */}
+                         
                         </div>
                     );
                 })}

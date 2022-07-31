@@ -1,14 +1,19 @@
 body {
-    background-color: ghostwhite;
-    color: hotpink;
+    /* background-color: #1e1a1d; */
+    color: #f819c7;
     font-family: "BigNoodleTitling";
     font-size: x-large;
     margin: 0;
     height: 100vh;
+    transition: all 1s;
 }
 
 button {
     font-family: "BigNoodleTitling";
+}
+
+h1 {
+    margin-left: 1em;
 }
 
 /* //////////////////// WELCOME //////////////// */
@@ -67,6 +72,7 @@ nav {
     padding: 10px 20px;
     height: 100px;
     background: #1e1a1d;
+    border-bottom: 1px solid orange;
 }
 
 header {
@@ -97,6 +103,7 @@ header a:hover {
 main {
     position: relative;
     min-height: 100vh;
+    background-color: #1e1a1d;
 }
 
 #content-wrap {

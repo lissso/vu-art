@@ -20,32 +20,34 @@ export default function Photos() {
     console.log("photos:\t", photos);
 
     return (
-        <>
+        <div className="photo-container">
             {/* <button onClick={() => setShow(true)}>Open Modal</button> */}
 
             <h1>Photography</h1>
             <div className="foto">
-                {photos &&
-                    photos.map((photo) => {
-                        return (
-                            <div key={photo.sys.id}>
-                                {photo.fields.title}
-                                <br />
-                                {photo.fields.image && (
-                                    <img
-                                        onClick={() =>
-                                            setShow({
-                                                title: photo.fields.title,
-                                                url: `https:${photo.fields.image?.fields.file.url}`,
-                                            })
-                                        }
-                                        className="postcards"
-                                        src={`https:${photo.fields.image?.fields.file.url}`}
-                                    />
-                                )}
-                            </div>
-                        );
-                    })}
+                <ul>
+                    {photos &&
+                        photos.map((photo) => {
+                            return (
+                                <li className="photo" key={photo.sys.id}>
+                                    {/* {photo.fields.title}
+                                    <br /> */}
+                                    {photo.fields.image && (
+                                        <img
+                                            className="photo"
+                                            onClick={() =>
+                                                setShow({
+                                                    title: photo.fields.title,
+                                                    url: `https:${photo.fields.image?.fields.file.url}`,
+                                                })
+                                            }
+                                            src={`https:${photo.fields.image?.fields.file.url}`}
+                                        />
+                                    )}
+                                </li>
+                            );
+                        })}
+                </ul>
             </div>
             <Modal
                 className="myModal"
@@ -53,6 +55,6 @@ export default function Photos() {
                 onClose={() => setShow(false)}
                 show={show}
             ></Modal>
-        </>
+        </div>
     );
 }

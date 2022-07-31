@@ -1,13 +1,60 @@
-/* //////////////////// POSTCARDS //////////////// */
-img.postcards {
-    width: 300px;
+/* //////////////////// PHOTO //////////////// */
+.photo-container,
+.photo-container h1 {
+    background-color: ghostwhite;
+    border-bottom: 1px solid #1e1a1d;
+    color:#1e1a1d;
+    margin-top: 0;
+    padding-top: 20px;
 }
 
-div:nth-child(2){
-    width: 400px;
+/* //////////////////// POSTCARDS //////////////// */
+.container-postcards H1 {
+    border-bottom: 1px solid ghostwhite;
+    color: ghostwhite;
 }
-div:nth-child(4){
-    width: 600px;
+img.photo,
+img.postcard {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 1.6em;
+}
+
+li {
+    height: 40vh;
+    flex-grow: 1;
+    margin: 4px;
+    list-style: none;
+}
+/* li:first-child {
+    flex-grow: 2;
+} */
+li:last-child {
+    flex-grow: 10;
+}
+
+@media (max-aspect-ratio: 2/1) and (max-width: 480px) {
+    ul {
+        flex-direction: row;
+    }
+
+    li {
+        height: auto;
+        width: 100%;
+    }
+
+    img.photo,
+    img.postcard {
+        width: 100%;
+        max-height: 60vh;
+        min-width: 0;
+    }
 }
 
 /* //////////////////// MODAL //////////////// */
@@ -31,7 +78,7 @@ div:nth-child(4){
 
 .modal-content {
     width: 600px;
-    height: 600px;
+    min-height: 600px;
     background: white;
     color: #185adb;
     z-index: 10;
@@ -107,7 +154,7 @@ div:nth-child(4){
     border-radius: 15px;
     font-size: 0.8rem;
     border: none;
-    color: white;
+    color: ghostwhite;
     background: #185adb;
     transition: all 0.25s ease;
 }
@@ -118,10 +165,14 @@ div:nth-child(4){
 }
 img.modal-image {
     width: 500px;
+    max-height: 500px;
+    object-fit: contain;
 }
 
 /* //////////////////// FORM //////////////// */
-
+.form-container h1 {
+    margin-left: 0;
+}
 .submitBtn {
     margin-top: 10px;
     cursor: pointer;
@@ -142,9 +193,18 @@ img.modal-image {
 }
 section.form {
     background-color: #f819c7;
-    height: 100vh;
+    color: hotpink;
+    height: 80vh;
     padding: 0;
-    margin: 0;
+    margin: 2em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 300px;
 }
 input,
 textarea {
@@ -160,11 +220,10 @@ textarea {
 textarea {
     height: 100px;
 }
-input#artist.checkbox{
+input#artist.checkbox {
     width: 20px;
-     height:20px;
-     background-color: orange;
-
+    height: 20px;
+    background-color: orange;
 }
 input:hover,
 input:active,
@@ -172,7 +231,7 @@ input:focus,
 textarea:hover,
 textarea:active,
 textarea:focus {
-    border: 2px dotted #b6d4bd;
+    border: 1px solid ghostwhite;
     outline: none;
     text-decoration: none;
 }
@@ -181,4 +240,18 @@ label {
     color: paleturquoise;
     margin-top: 14px;
     margin-bottom: 4px;
+}
+
+@media screen and (max-width: 900px) {
+    section.form {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+/* //////////////////// ARTIST //////////////// */
+
+img.small {
+    width: 10px;
+    height: 50px;
 }

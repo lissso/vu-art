@@ -1,8 +1,11 @@
 import { getEntriesByArtist } from "./client";
 import { useEffect, useState } from "react";
 
+import Modal from "../Components/modal";
+
 export default function ArtistEntries({ artist }) {
     const [entries, setEntries] = useState([]);
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         getEntriesByArtist(artist).then((entries) => {
@@ -19,13 +22,25 @@ export default function ArtistEntries({ artist }) {
                 {entries.map((entry) => {
                     return (
                         <img
-                            className="postcards"
+                            className="small"
                             key={entry.sys.id}
+                            onClick={() =>
+                                setShow({
+                                    title: entry.fields.title,
+                                    url: `https:${entry.fields.image?.fields.file.url}`,
+                                })
+                            }
                             src={`https:${entry.fields?.image?.fields?.file?.url}`}
                         />
                     );
                 })}
             </div>
+            <Modal
+                className="myModal"
+                title="My modal"
+                onClose={() => setShow(false)}
+                show={show}
+            ></Modal>
         </>
     );
 }
