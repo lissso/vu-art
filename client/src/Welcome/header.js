@@ -11,11 +11,17 @@ export default function Header() {
                 <Logo />
             </Link>
             <header>
-                <Link to="/artists">artists</Link>
+                <Link className="header" to="/artists">
+                    artists
+                </Link>
                 <h1 className="stripe">|</h1>
-                <Link to="/postcards">postcards</Link>
+                <Link className="header" to="/postcards">
+                    postcards
+                </Link>
                 <h1 className="stripe">|</h1>
-                <Link to="/photos">photos</Link>
+                <Link className="header" to="/photos">
+                    photos
+                </Link>
             </header>
         </nav>
     );
