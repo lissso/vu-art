@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 import { getArtists } from "../Contentful/client";
 import { useState, useEffect } from "react";
-import LogoCube from "../App/Cube/cube";
+import LogoCube from "./Cube/cube";
 
 import "./style.css";
 
@@ -38,10 +38,12 @@ export default function ContactForm() {
     };
 
     return (
-        <section className="form">
-            <LogoCube />
-            <div className="form-container">
-                <h1>Connect with our artists: </h1>
+        <div className="form">
+            <div className="container-cube form-one flex-column ">
+                <LogoCube />
+            </div>
+            <div className="form-container form-two flex-column">
+                <h2>Connect with the artists</h2>
 
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -78,6 +80,6 @@ export default function ContactForm() {
                     </button>
                 </form>
             </div>
-        </section>
+        </div>
     );
 }

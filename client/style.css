@@ -61,6 +61,8 @@ section a:active {
 }
 section a:hover {
     text-decoration: underline;
+    rotate: 3.1416rad;
+    transition: 1s ease-in-out;
 }
 
 /* //////////////////// HEADER //////////////// */
@@ -91,12 +93,22 @@ header a {
     color: ghostwhite;
 }
 
-header a:focus,
+header a:focus {
+    color: #f819c7;
+}
 header a:active {
     color: #f819c7;
+    rotate: y 90deg;
+    transition: 1s ease-in-out;
 }
 header a:hover {
     text-decoration: underline;
+    transform: rotate(5deg);
+    transition: 1s ease-in-out;
+}
+header a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 /* //////////////////// FOOTER //////////////// */
 

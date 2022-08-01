@@ -13,7 +13,7 @@ export default function Flop() {
         <>
             <div
                 onClick={() => toggle()}
-                className={`cube ${flop ? "flop" : ""}`}
+                className={`switch-cube ${flop ? "flop" : ""}`}
             >
                 <div className="flippety">Flip</div>
                 <div className="flop">Flop</div>

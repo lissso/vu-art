@@ -1,17 +1,24 @@
 /* //////////////////// PHOTO //////////////// */
-.photo-container,
-.photo-container h1 {
+.photo-container {
+    background-color: ghostwhite;
+    padding-bottom: 6rem;
+}
+.photo-container h1.content-header {
     background-color: ghostwhite;
     border-bottom: 1px solid #1e1a1d;
-    color:#1e1a1d;
+    color: #1e1a1d;
     margin-top: 0;
-    padding-top: 20px;
+    padding-top: 1.6em;
+    padding-bottom: 1em;
+    margin-bottom: 0em;
 }
 
 /* //////////////////// POSTCARDS //////////////// */
-.container-postcards H1 {
+.container-postcards h1.content-header {
     border-bottom: 1px solid ghostwhite;
     color: ghostwhite;
+    margin-top: 1.6em;
+    margin-bottom: 1em;
 }
 img.photo,
 img.postcard {
@@ -20,6 +27,13 @@ img.postcard {
     object-fit: cover;
     vertical-align: bottom;
 }
+img.photo:hover,
+img.postcard:hover {
+    max-width: 120%;
+    max-height: 104%;
+    transition: all 0.5s ease-out;
+}
+
 ul {
     display: flex;
     flex-wrap: wrap;
@@ -27,9 +41,9 @@ ul {
 }
 
 li {
-    height: 40vh;
+    height: 38vh;
     flex-grow: 1;
-    margin: 4px;
+    margin: 8px;
     list-style: none;
 }
 /* li:first-child {
@@ -85,14 +99,16 @@ li:last-child {
     border-radius: 1px;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
 }
-
+h1.modal-title {
+    color: #185adb;
+}
 .modal-header {
     height: 100px;
     background: white;
     overflow: hidden;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    color: #185adb;
+
     padding: 0 40px;
     margin-bottom: 20px;
 }
@@ -170,7 +186,7 @@ img.modal-image {
 }
 
 /* //////////////////// FORM //////////////// */
-.form-container h1 {
+.form-container h1.content-header {
     margin-left: 0;
 }
 .submitBtn {
@@ -191,20 +207,39 @@ img.modal-image {
     transform: translateY(-5px);
     background: #f819c7;
 }
-section.form {
-    background-color: #f819c7;
-    color: hotpink;
+.form {
+    color: ghostwhite;
     height: 80vh;
     padding: 0;
     margin: 2em;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: auto;
+}
+
+.form-one {
+    grid-column: 1;
+    grid-row: 1;
+}
+.form-two {
+    grid-column: 2;
+    grid-row: 1;
+    /* background-color: #185adb; */
+    padding: 3em 3.2em;
+}
+.container-cube {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .form-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: baseline;
     width: 300px;
+    border-left: 1px solid orange;
+    border-right: 1px solid orange;
 }
 input,
 textarea {
@@ -238,20 +273,77 @@ textarea:focus {
 
 label {
     color: paleturquoise;
+    font-size: 20px;
+    line-height: 24px;
     margin-top: 14px;
     margin-bottom: 4px;
 }
 
-@media screen and (max-width: 900px) {
-    section.form {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
+/* @media screen and (min-width: 1000px) {
+    .form {
+        margin: 2em 5em;
+    }
+    .form-two {
+        padding: 0 4em;
+    }
+} */
+@media screen and (max-width: 800px) {
+    .form {
+        height: 100%;
+        margin: 2em;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 1em;
+    }
+
+    .form-one {
+        grid-column: 1;
+        grid-row: 1;
+        padding: 2em;
+    }
+    .form-two {
+        grid-column: 1;
+        grid-row: 2;
+        /* background: rgba(24, 89, 219, 0.8); */
+        padding: 1em 3em;
     }
 }
 
 /* //////////////////// ARTIST //////////////// */
-
+.container-artists h1.content-header {
+    /* border-bottom: 1px solid #f819c7; */
+    color: #f819c7;
+    margin-top: 1.6em;
+    margin-bottom: 1em;
+}
+.artist-row {
+    margin: 0 2em;
+}
+h2.artist-name {
+    border-bottom: 1px solid ghostwhite;
+    color: ghostwhite;
+    margin-top: 0;
+}
+h2.artist-name:hover,
+h2.artist-name:active,
+h2.artist-name:focus {
+    border-bottom: 1px solid #f819c7;
+    color: #f819c7;
+    transition: all 0.5s ease-out;
+}
+.artist-image {
+    margin-top: 1em;
+}
 img.small {
-    width: 10px;
-    height: 50px;
+    max-width: 250px;
+    max-height: 200px;
+    object-fit: contain;
+    filter: grayscale(100%);
+}
+img.small:hover {
+    max-width: 280px;
+    max-height: 210px;
+    filter: grayscale(10%);
+    transition: all 0.5s ease-out;
+
 }

@@ -12,26 +12,17 @@ import Form from "../Components/form";
 import Header from "../Welcome/header";
 import Footer from "../Welcome/footer";
 import Flop from "./flop";
-import LogoCube from "./Cube/cube";
+import ArtistPortrait from "../Components/artist-portrait";
 
 // import Images from "./Images/images";
 
 export default function App() {
     return (
         <BrowserRouter>
-            {/* <div className={"cube" + this.state.flopped ? " flop" : ""}> */}
-            {/* <div className="flippety"> */}
             <Route exact path={"/"}>
                 <Welcome />
             </Route>
-            {/* </div>
-                <div className="flop"> */}
             <Body />
-            {/* </div> */}
-            {/* </div> */}
-            <Route path={"/cube"}>
-                <LogoCube />
-            </Route>
         </BrowserRouter>
     );
 }
@@ -57,6 +48,9 @@ function Body() {
                 <Route path={"/contact"}>
                     <Form />
                 </Route>
+                <Route path={"/portrait"}>
+                    <ArtistPortrait />
+                </Route>
             </div>
 
             <Footer />
@@ -64,7 +58,6 @@ function Body() {
             <Route path={"/flop"}>
                 <Flop />
             </Route>
-    
         </>
     );
 }

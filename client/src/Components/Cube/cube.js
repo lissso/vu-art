@@ -36,7 +36,10 @@ class LogoCube extends React.Component {
                             </div>
                             <div>
                                 <img
-                                    style={{ backgroundColor: "#f819c7" }}
+                                    style={{
+                                        backgroundColor: "#f819c7",
+                                        height: "300px",
+                                    }}
                                     className="logo-card"
                                     src="/ART.svg"
                                 />

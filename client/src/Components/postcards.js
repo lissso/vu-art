@@ -23,7 +23,7 @@ export default function Postcards() {
     return (
         <>
             <div className="container-postcards">
-                <h1>Postcard</h1>
+                <h1 className="content-header ">Postcard</h1>
                 <ul>
                     {postcards &&
                         postcards.map((postcard) => {
@@ -33,7 +33,7 @@ export default function Postcards() {
                                 <br /> */}
                                     {postcard.fields.image && (
                                         <img
-                                            className="photo"
+                                            className="photo hover"
                                             onClick={() =>
                                                 setShow({
                                                     title: postcard.fields

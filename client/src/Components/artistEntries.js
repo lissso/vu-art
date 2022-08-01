@@ -1,7 +1,7 @@
-import { getEntriesByArtist } from "./client";
+import { getEntriesByArtist } from "../Contentful/client";
 import { useEffect, useState } from "react";
 
-import Modal from "../Components/modal";
+import Modal from "./modal";
 
 export default function ArtistEntries({ artist }) {
     const [entries, setEntries] = useState([]);
@@ -16,13 +16,18 @@ export default function ArtistEntries({ artist }) {
     console.log(entries, "entries");
     return (
         <>
-            <div>
+            <div className="artist-entries">
                 {/* leere artists werden nicht angezeigt */}
-                {entries.length > 0 && <span>{artist}</span>}
+                {entries.length > 0 && (
+                    <h2 className="artist-name">
+                        {artist}
+                        <br />
+                    </h2>
+                )}
                 {entries.map((entry) => {
                     return (
                         <img
-                            className="small"
+                            className="small artist-image hover"
                             key={entry.sys.id}
                             onClick={() =>
                                 setShow({

@@ -23,7 +23,7 @@ export default function Photos() {
         <div className="photo-container">
             {/* <button onClick={() => setShow(true)}>Open Modal</button> */}
 
-            <h1>Photography</h1>
+            <h1 className="content-header">Photography</h1>
             <div className="foto">
                 <ul>
                     {photos &&
@@ -34,7 +34,7 @@ export default function Photos() {
                                     <br /> */}
                                     {photo.fields.image && (
                                         <img
-                                            className="photo"
+                                            className="photo hover"
                                             onClick={() =>
                                                 setShow({
                                                     title: photo.fields.title,
