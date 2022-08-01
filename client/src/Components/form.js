@@ -2,6 +2,8 @@
 import { getArtists } from "../Contentful/client";
 import { useState, useEffect } from "react";
 import LogoCube from "./Cube/cube";
+import Header from "../Welcome/header";
+import Footer from "../Welcome/footer";
 
 import "./style.css";
 
@@ -38,48 +40,55 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="form">
-            <div className="container-cube form-one flex-column ">
-                <LogoCube />
-            </div>
-            <div className="form-container form-two flex-column">
-                <h2>Connect with the artists</h2>
+        <>
+            <Header />
+            <div className="form">
+                <div className="container-cube form-one flex-column ">
+                    <LogoCube />
+                </div>
+                <div className="form-container form-two flex-column">
+                    <h2>Connect with the artists</h2>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" required />
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" required />
-                    </div>
-                    <div>
-                        <label htmlFor="message">Message:</label>
-                        <textarea id="message" required />
-                    </div>
-                    <div>
-                        {artists &&
-                            artists.map((x, i) => (
-                                <>
-                                    <input
-                                        className="checkbox"
-                                        key={i}
-                                        type="checkbox"
-                                        id="artist"
-                                        name={x.name}
-                                        value={x.email}
-                                    />
-                                    <label key={"label-" + i}> {x.name}</label>{" "}
-                                </>
-                            ))}
-                        <br />
-                    </div>
-                    <button className="submitBtn" type="submit">
-                        {status}
-                    </button>
-                </form>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor="name">Name:</label>
+                            <input type="text" id="name" required />
+                        </div>
+                        <div>
+                            <label htmlFor="email">Email:</label>
+                            <input type="email" id="email" required />
+                        </div>
+                        <div>
+                            <label htmlFor="message">Message:</label>
+                            <textarea id="message" required />
+                        </div>
+                        <div>
+                            {artists &&
+                                artists.map((x, i) => (
+                                    <>
+                                        <input
+                                            className="checkbox"
+                                            key={i}
+                                            type="checkbox"
+                                            id="artist"
+                                            name={x.name}
+                                            value={x.email}
+                                        />
+                                        <label key={"label-" + i}>
+                                            {" "}
+                                            {x.name}
+                                        </label>{" "}
+                                    </>
+                                ))}
+                            <br />
+                        </div>
+                        <button className="submitBtn" type="submit">
+                            {status}
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 }

@@ -2,6 +2,8 @@ import "./style.css";
 
 import { useEffect, useState } from "react";
 import { getEntriesByContentType } from "../Contentful/client";
+import Header from "../Welcome/header";
+import Footer from "../Welcome/footer";
 
 import Modal from "./modal";
 
@@ -22,6 +24,7 @@ export default function Postcards() {
 
     return (
         <>
+            <Header />
             <div className="container-postcards">
                 <h1 className="content-header ">Postcard</h1>
                 <ul>
@@ -55,6 +58,8 @@ export default function Postcards() {
                 onClose={() => setShow(false)}
                 show={show}
             ></Modal>
+
+            <Footer />
         </>
     );
 }

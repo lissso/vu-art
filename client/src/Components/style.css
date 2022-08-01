@@ -3,6 +3,10 @@
     background-color: ghostwhite;
     padding-bottom: 6rem;
 }
+.container-postcards,
+.container-artists {
+    padding-bottom: 6em;
+}
 .photo-container h1.content-header {
     background-color: ghostwhite;
     border-bottom: 1px solid #1e1a1d;
@@ -101,6 +105,7 @@ li:last-child {
 }
 h1.modal-title {
     color: #185adb;
+    margin-left: 1em;
 }
 .modal-header {
     height: 100px;
@@ -108,16 +113,17 @@ h1.modal-title {
     overflow: hidden;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-
-    padding: 0 40px;
     margin-bottom: 20px;
 }
 
 .modal-body {
-    padding: 10px;
     font-size: 14px;
     color: #2c3e50;
-    text-align: center;
+    width: 400px;
+    margin-left: 3em;
+    margin-top: 2em;
+    text-align: left;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .closeBtn {
@@ -155,6 +161,9 @@ h1.modal-title {
     color: #2c3e50;
     background: #fcfcfc;
     transition: all 0.25s ease;
+    margin-top: 1em;
+    margin-left: 3em;
+    margin-bottom: 2em;
 }
 
 .contactBtn:hover {
@@ -184,6 +193,8 @@ img.modal-image {
     max-height: 500px;
     object-fit: contain;
 }
+
+/* //////////////////// MODAL PORTRAIT //////////////// */
 
 /* //////////////////// FORM //////////////// */
 .form-container h1.content-header {
@@ -345,5 +356,4 @@ img.small:hover {
     max-height: 210px;
     filter: grayscale(10%);
     transition: all 0.5s ease-out;
-
 }

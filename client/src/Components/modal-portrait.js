@@ -29,10 +29,13 @@ export default function ModalPortrait(props) {
                         </button>
                     </div>
                     <div className="modal-header">
-                        <h1 className="modal-title">{props.show.title}</h1>
+                        <h1 className="modal-title">{props.show.name}</h1>
                     </div>
                     <img className="modal-image" src={props.show.url} />
-                    <div className="modal-body">{props.children}</div>
+                    <div className="modal-body modal-body-portrait">
+                        {props.show.bio}
+                    </div>
+                    {/* <div className="modal-body">{props.children}</div> */}
                     <div className="modal-footer">
                         <Link className="contact-footer" to="/contact">
                             <button className="contactBtn">Contact</button>

@@ -9,10 +9,7 @@ import Postcards from "../Components/postcards";
 import Photos from "../Components/photo";
 import Artists from "../Components/artists";
 import Form from "../Components/form";
-import Header from "../Welcome/header";
-import Footer from "../Welcome/footer";
 import Flop from "./flop";
-import ArtistPortrait from "../Components/artist-portrait";
 
 // import Images from "./Images/images";
 
@@ -30,8 +27,6 @@ export default function App() {
 function Body() {
     return (
         <>
-            <Header />
-
             <div id="content-wrap">
                 <Route path={"/postcards"}>
                     <Postcards />
@@ -48,12 +43,7 @@ function Body() {
                 <Route path={"/contact"}>
                     <Form />
                 </Route>
-                <Route path={"/portrait"}>
-                    <ArtistPortrait />
-                </Route>
             </div>
-
-            <Footer />
 
             <Route path={"/flop"}>
                 <Flop />

@@ -2,10 +2,12 @@ import { getEntriesByArtist } from "../Contentful/client";
 import { useEffect, useState } from "react";
 
 import Modal from "./modal";
+import ModalPortrait from "./modal-portrait";
 
-export default function ArtistEntries({ artist }) {
+export default function ArtistEntries({ artist, artistdata }) {
     const [entries, setEntries] = useState([]);
     const [show, setShow] = useState(false);
+    const [showArtist, setShowArtist] = useState(false);
 
     useEffect(() => {
         getEntriesByArtist(artist).then((entries) => {
@@ -19,11 +21,33 @@ export default function ArtistEntries({ artist }) {
             <div className="artist-entries">
                 {/* leere artists werden nicht angezeigt */}
                 {entries.length > 0 && (
-                    <h2 className="artist-name">
+                    <h2
+                        className="artist-name"
+                        onClick={() =>
+                            setShowArtist({
+                                artist: artistdata,
+                                name: artistdata.fields.name,
+                                bio: artistdata.fields.bio,
+                                url: `https:${artistdata.fields.portrait?.fields.file.url}`,
+                            })
+                        }
+                    >
                         {artist}
                         <br />
                     </h2>
                 )}
+                <ModalPortrait
+                    className="myModal"
+                    title="My modal"
+                    onClose={() => setShowArtist(false)}
+                    show={showArtist}
+                >
+                    {/* {artistdata.fields.name}
+                    {artistdata.fields.bio}
+                    {artistdata.fields.url}
+                    if not in set show artist then here */}
+                </ModalPortrait>
+
                 {entries.map((entry) => {
                     return (
                         <img
