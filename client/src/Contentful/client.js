@@ -1,5 +1,7 @@
 import * as contentful from "contentful";
-const { contentfulAccessToken } = require("../../../secrets.json");
+const contentfulAccessToken = "8Dk-gBvISvI5oGn0HbG2aAlHYMaWKcEYfbh3LPnOkUo";
+// process.env.contentfulAccessToken ||
+// require("../../../secrets.json").contentfulAccessToken;
 
 export default function getClientContentful() {
     return contentful.createClient({
