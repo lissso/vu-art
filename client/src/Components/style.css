@@ -8,7 +8,6 @@
     padding-bottom: 6em;
 }
 .photo-container h1.content-header {
-    background-color: ghostwhite;
     border-bottom: 1px solid #1e1a1d;
     color: #1e1a1d;
     margin-top: 0;
@@ -97,7 +96,7 @@ li:last-child {
 .modal-content {
     width: 600px;
     min-height: 600px;
-    background: white;
+    background: ghostwhite;
     color: #185adb;
     z-index: 10;
     border-radius: 1px;
@@ -109,7 +108,7 @@ h1.modal-title {
 }
 .modal-header {
     height: 100px;
-    background: white;
+    /* background: ghostwhite; */
     overflow: hidden;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -124,6 +123,11 @@ h1.modal-title {
     margin-top: 2em;
     text-align: left;
     font-family: "Courier New", Courier, monospace;
+}
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .closeBtn {
@@ -153,13 +157,14 @@ h1.modal-title {
 .contactBtn {
     margin-top: 10px;
     cursor: pointer;
+    font-size: 14px;
     font-weight: 500;
     padding: 11px 28px;
     border-radius: 12px;
     font-size: 0.8rem;
     border: none;
     color: #2c3e50;
-    background: #fcfcfc;
+    background: #edede1;
     transition: all 0.25s ease;
     margin-top: 1em;
     margin-left: 3em;
@@ -169,7 +174,8 @@ h1.modal-title {
 .contactBtn:hover {
     box-shadow: none;
     transform: none;
-    background: whitesmoke;
+    background: #185adb;
+    color: #edede1;
 }
 .primaryBtn {
     margin: 20px 10px;
@@ -373,7 +379,7 @@ img.small {
     max-width: 250px;
     max-height: 200px;
     object-fit: contain;
-    filter: grayscale(100%);
+    filter: grayscale(90%);
 }
 img.small:hover {
     max-width: 280px;

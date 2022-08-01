@@ -25,6 +25,7 @@ class LogoCube extends React.Component {
                     >
                         <Cube size={300} index="front">
                             <div>
+                                {/* front */}
                                 <img src="/logo.svg" />
                             </div>
                             <div>

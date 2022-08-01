@@ -59,9 +59,7 @@ export default function Photos() {
                     title="My modal"
                     onClose={() => setShow(false)}
                     show={show}
-                >
-                    Hello
-                </Modal>
+                ></Modal>
             </div>
             <Footer />
         </>

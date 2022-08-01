@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "BigNoodleTitling";
+    src: local("BigNoodleTitling"),
+        url(../client/public/big-noodle-titling/BigNoodleTitling.ttf)
+            format("truetype");
+}
+
 body {
     /* background-color: #1e1a1d; */
     color: #f819c7;
@@ -133,25 +140,25 @@ main {
     font-size: 20px;
 }
 
-.contact-footer {
+.form-contact-footer {
     position: absolute;
     bottom: 0.8em;
     right: 1em;
 }
-a.contact-footer {
+a.form-contact-footer {
     font-weight: 700;
 
     color: ghostwhite;
     text-decoration: none;
 }
-a.contact-footer:hover {
+a.form-contact-footer:hover {
     font-weight: 700;
     color: ghostwhite;
     text-decoration: underline;
     transition: 1s ease-in-out;
 }
-a.contact-footer:focus,
-a.contact-footer:active {
+a.form-contact-footer:focus,
+a.form-contact-footer:active {
     font-weight: 700;
     color: #f819c7;
     text-decoration: underline;
