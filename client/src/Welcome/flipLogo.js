@@ -1,3 +1,4 @@
+import "../../style.css";
 import { Component } from "react";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
 export default class FlipLogo extends Component {

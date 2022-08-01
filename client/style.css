@@ -43,10 +43,10 @@ img.logo-card-art {
 
 section {
     display: flex;
-    flex-direction: row;
+    flex-flow: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 8.2em;
 }
 section a {
     font-weight: 100;
@@ -63,6 +63,7 @@ section a:hover {
     text-decoration: underline;
     rotate: 3.1416rad;
     transition: 1s ease-in-out;
+    color: #f819c7;
 }
 
 /* //////////////////// HEADER //////////////// */
@@ -99,6 +100,8 @@ header a.header:focus {
 header a.header:hover {
     text-decoration: underline;
     transform: rotate(5deg);
+    transition: 750ms ease;
+    color: #f819c7;
 }
 /* header a:hover::after {
     transform: scaleX(1);
@@ -153,4 +156,8 @@ a.contact-footer:active {
     color: #f819c7;
     text-decoration: underline;
     transition: 500ms ease-in;
+}
+
+.flippy-container {
+    margin: 1em;
 }

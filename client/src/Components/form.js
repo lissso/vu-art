@@ -93,26 +93,30 @@ export default function ContactForm() {
                                 setEmailArtist(e.target.value);
                             }}
                         >
-                            {artists &&
-                                artists.map((x, i) => (
-                                    <>
-                                        <input
-                                            className="checkbox"
-                                            key={i}
-                                            type="radio"
-                                            name={"artist"}
-                                            value={x.email}
-                                        />
-                                        <label key={"label-" + i}>
-                                            {x.name}
-                                        </label>
-                                    </>
-                                ))}
+                            <div className="artist-form">
+                                {artists &&
+                                    artists.map((x, i) => (
+                                        <>
+                                            <input
+                                                className="checkbox"
+                                                key={i}
+                                                type="radio"
+                                                name={"artist"}
+                                                value={x.email}
+                                            />
+                                            <label key={"label-" + i}>
+                                                {x.name}
+                                            </label>
+                                        </>
+                                    ))}
+                            </div>
                             <br />
+                            <div className="button-form">
+                                <button className="submitBtn" type="submit">
+                                    {status}
+                                </button>
+                            </div>
                         </div>
-                        <button className="submitBtn" type="submit">
-                            {status}
-                        </button>
                     </form>
                 </div>
             </div>
