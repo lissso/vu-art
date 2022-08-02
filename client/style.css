@@ -1,8 +1,7 @@
 @font-face {
     font-family: "BigNoodleTitling";
     src: local("BigNoodleTitling"),
-        url(../client/public/big-noodle-titling/BigNoodleTitling.ttf)
-            format("truetype");
+        url(/big-noodle-titling/BigNoodleTitling.ttf) format("truetype");
 }
 
 body {
